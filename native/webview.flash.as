@@ -1,18 +1,14 @@
-import flash.net.navigateToURL;
-import flash.net.URLRequest;
+import flash.external.ExternalInterface
 
-function getURL(url:String, window:String = "_self"):void
-{
-    navigateToURL(new URLRequest(url), window);
-}
 function OpenWebView(url:String,x:Number,y:Number,w:Number,h:Number):void {
-	getURL("javascript:OpenWebView('"+url+"',"+x+","+y+","+w+","+h+");");
+	ExternalInterface.call("OpenWebView('"+url+"',"+x+","+y+","+w+","+h+")");
 }
 
 function CloseWebView():void {
-	getURL("javascript:CloseWebView();");	
+	ExternalInterface.call("CloseWebView()");	
 }
 
 function WebViewLoaded():Boolean {
-	return false; 
+	var s:Boolean = ExternalInterface.call("WebViewLoaded()");
+	return s;
 }
