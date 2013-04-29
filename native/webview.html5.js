@@ -18,6 +18,15 @@ function WebViewLoaded() {
 	return __iFrameLoaded; 
 }
 
+function ShowWebView() {
+	document.getElementById(__iFrameID).style.display = 'none';
+}
+
+function HideWebView() {
+	document.getElementById(__iFrameID).style.display = 'block';
+
+}
+
 function openIFrame(url, x,y,w,h) {
 	var iFrame = document.createElement('iframe');
 	iFrame.name = __iFrameID;

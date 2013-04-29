@@ -12,3 +12,11 @@ function WebViewLoaded():Boolean {
 	var s:Boolean = ExternalInterface.call("WebViewLoaded()");
 	return s;
 }
+
+function ShowWebView():void {
+	ExternalInterface.call("ShowWebView()");
+}
+
+function HideWebView():void {
+	ExternalInterface.call("HideWebView()");
+}
